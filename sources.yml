@@ -1,0 +1,78 @@
+#
+# This config was started with the content from:
+#    https://github.com/pi-hole/pi-hole/blob/master/adlists.default
+#
+# The below list amalgamates several lists we used previously.
+# See `https://github.com/StevenBlack/hosts` for details
+StevenBlack:
+    url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+    risk: low
+
+# Other lists considered safe:
+gjtech:
+    url: http://adblock.gjtech.net/?format=unix-hosts
+    risk: low
+malwaredomains:
+    url: http://mirror1.malwaredomains.com/files/justdomains
+    risk: low
+cameleon:
+    url: http://sysctl.org/cameleon/hosts
+    risk: low
+zeustracker:
+    url: https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
+    risk: low
+
+disconnect.me-tracking:
+    url: https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+    risk: low
+disconnect.me-ad:
+    url: https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+    risk: low
+
+# hosts-file.net list. Updated frequently, but has been known to block legitimate sites.
+hosts-file:
+    url: http://hosts-file.net/ad_servers.txt
+    risk: medium
+
+# Mahakala list. Has been known to block legitimage domains including the entire .com range.
+# Warning: Due to the sheer size of this list, the web admin console will be unresponsive.
+mahakala:
+    url: http://adblock.mahakala.is/
+    risk: high
+    headers:
+        User-Agent: 'Mozilla/5.0 (X11; Linux x86_64; rv:30.0) Gecko/20100101 Firefox/30.0'
+        Referer: http://forum.xda-developers.com/
+
+# ADZHOSTS list. Has been known to block legitimate domains
+adzhosts:
+    url: http://optimate.dl.sourceforge.net/project/adzhosts/HOSTS.txt
+    risk: high
+
+# Windows 10 telemetry list
+WindowsSpyBlocker:
+    url: https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt
+    risk: medium
+
+# Securemecca.com list - Also blocks "adult" sites (pornography/gambling etc)
+securemecca:
+    url: http://securemecca.com/Downloads/hosts.txt
+    risk: high
+
+# Quidsup's tracker list
+quidsup:
+    url: https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt
+    risk: low
+
+# Block the BBC News website Breaking News banner
+BreakingTheNews:
+    url: https://raw.githubusercontent.com/BreakingTheNews/BreakingTheNews.github.io/master/hosts
+    risk: medium
+
+
+# Untested Lists:
+#https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt
+#http://spam404bl.com/spam404scamlist.txt
+#http://malwaredomains.lehigh.edu/files/domains.txt
+# Following two lists should be used simultaneously: (readme https://github.com/notracking/hosts-blocklists/)
+#https://raw.github.com/notracking/hosts-blocklists/master/hostnames.txt
+#https://raw.github.com/notracking/hosts-blocklists/master/domains.txt
